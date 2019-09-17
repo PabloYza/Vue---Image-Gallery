@@ -3,9 +3,10 @@
     <a href="/" class="active item">
       Logo
     </a>
+
     <div class="right menu">
-      <a class="ui item">
-        Logout / Login  
+      <a href="# " class="ui item" @click="login" >
+        Logout / Login
       </a>
     </div>
   </div>
@@ -13,9 +14,14 @@
 
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'AppHeader',
-}
+  methods:{
+    ...mapActions(['login']) //VUEx method that connects ACTIONS to a component -> mapActions(['ActionName'])
+  }
+};
 </script>
 
 

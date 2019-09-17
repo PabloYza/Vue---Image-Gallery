@@ -1,3 +1,5 @@
+import api from '../../api/imgur';
+
 const state = {
   token: null
 };
@@ -15,6 +17,9 @@ const actions = {
     commit('setToken', null); // logout => (token = null)
 
   },
+  login: () => {
+    api.login();
+  },
 
 };
 
@@ -24,4 +29,13 @@ const mutations = {
     state.token = token; // update the token VALUE
 
   }
+};
+
+
+
+export default {
+  state,
+  getters,
+  actions,
+  mutations
 };
