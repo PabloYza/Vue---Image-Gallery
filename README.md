@@ -1,29 +1,11 @@
 # image-gallery
 
-## Project setup
-```
-npm install
-```
+Outline of the project & challenges - 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Galley webApp with login, profile, storage 
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Render components based on URL -> Vue Router library
+-> Use of VueX to handle the flow of data
+-> Use of the free Imgur API || with drag and drop implementation
+User authentication -> Use OAuth2 through the Imgur API
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
