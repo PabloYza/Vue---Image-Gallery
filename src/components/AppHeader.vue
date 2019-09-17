@@ -5,7 +5,7 @@
     </a>
     <div class="right menu">
       <a class="ui item">
-        Logout
+        Logout / Login  
       </a>
     </div>
   </div>
