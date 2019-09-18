@@ -3,10 +3,12 @@
     <a href="/" class="active item">
       Logo
     </a>
-
-    <div class="right menu">
-      <a href="# " class="ui item" @click="login" >
-        Logout / Login
+    <div class="right menu" >
+      <a v-if="isLoggedIn" class="active item" href="/" >
+        Logout
+      </a>
+      <a v-else href="# " class="ui item active item" @click="login" >
+        Login
       </a>
     </div>
   </div>
@@ -14,13 +16,14 @@
 
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'AppHeader',
   methods:{
-    ...mapActions(['login']) //VUEx method that connects ACTIONS to a component -> mapActions(['ActionName'])
-  }
+    ...mapActions(['login']),//connects ACTIONS(methods that modify data inside the module) to a component -> mapActions(['ActionName','ActionName',... ])
+  },
+  computed: mapGetters(['isLoggedIn']),//connects GETTERS(information from the module) to a component -> mapGetters(['GetterName','GetterName',... ])
 };
 </script>
 
