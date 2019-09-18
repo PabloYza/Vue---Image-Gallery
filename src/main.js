@@ -7,6 +7,7 @@ import AuthHandler from './components/AuthHandler';
 // ROUTES
 Vue.use(VueRouter); // initial "handshake" between Vue and VueRouter
 const router = new VueRouter ({
+  mode: 'history', // config to change from hashRouter -> browserRouter
   routes: [
     { path: '/oauth2/callback', component: AuthHandler}, // Path we want this RULE to define
   ]
