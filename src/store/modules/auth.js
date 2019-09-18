@@ -18,6 +18,7 @@ const getters = {
 const actions = {
   logout: ({ commit }, ) => {
     commit('setToken', null); // logout => (token = null)
+    window.localStorage.removeItem('imgur_token'); // to remove an item from localStorage -> removeItem('NameOfItem')
   },
 
   login: () => {
