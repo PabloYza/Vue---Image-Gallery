@@ -23,5 +23,22 @@ export default {
         Authorization: `Bearer ${token}`
       }
     })
+  },
+
+  uploadImages(images, token) {
+    // this method will take images(not a full array) and transform it into one, so we can iterate over
+    const promises = Array.from(images).map(image => {
+      const formData = new FormData();
+      formData.append('image', image);
+
+      return axios.post(`${ROOT_URL}/3/image`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    });
+
+// Promise.all() -> takes array of promises and waits for them to be resolved -> promise.all() resolves itself
+    return Promise.all(promises) // -> we wait for every upload request to be completed before we allow the FUNC to continue
   }
 };
